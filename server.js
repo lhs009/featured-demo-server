@@ -9,7 +9,19 @@ app.use(express.static('public'));
 
 function getReadMe(no) {
 	//const fileName = './pjtno + '.md';
-	const fileName = `./public/pjt${no}/readme.md`;
+	let pNo = 0;
+	if (no === '498') {
+		pNo = 1;
+	} else if (no === '499') {
+		pNo = 2;
+	} else if (no === '504') {
+		pNo = 4;
+	} else {
+		pNo = no;
+	}
+
+	console.log(no, pNo);
+	const fileName = `./public/pjt${pNo}/readme.md`;
 	console.log(fileName);
 	const data = fs.readFileSync(fileName, 'utf8');
 	console.log(data);
