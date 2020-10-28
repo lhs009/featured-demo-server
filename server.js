@@ -37,7 +37,7 @@ app.get('/readme/:no', (req, res) => {
 	const data = getReadMe(no);
 	console.log('data ###### => ' + data);
 	if (data === 4) {
-		return res.redirect('../pjt4/demolink.html');
+		return res.redirect('../pjt4/p4intro.html');
 	}
 
 	res.send(converter.makeHtml(data));
