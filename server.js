@@ -16,6 +16,7 @@ function getReadMe(no) {
 		pNo = 2;
 	} else if (no === '504') {
 		pNo = 4;
+		return pNo;
 	} else {
 		pNo = no;
 	}
@@ -34,6 +35,10 @@ app.get('/readme/:no', (req, res) => {
 	const no = req.params.no;
 	console.log('no===>' + no);
 	const data = getReadMe(no);
+	console.log('data ###### => ' + data);
+	if (data === 4) {
+		return res.redirect('../pjt4/demolink.html');
+	}
 
 	res.send(converter.makeHtml(data));
 });
