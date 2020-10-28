@@ -30,8 +30,9 @@ function getReadMe(no) {
 
 app.get('/readme/:no', (req, res) => {
 	// getReadMe(no);
+	console.log('readme @@@@@@@@@@@@@@@@@@@@@');
 	const no = req.params.no;
-	console.log(no);
+	console.log('no===>' + no);
 	const data = getReadMe(no);
 
 	res.send(converter.makeHtml(data));
