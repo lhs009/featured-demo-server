@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<META http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'/>
+<META http-equiv="Pragma" content="no-cache"/>
+<META http-equiv="Pragma" content="no-store"/>
+<META http-equiv="Expires" content="-1"/>
+<!--<meta name="_csrf" th:content="${_csrf.token}"/>
+<meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+<title>LG AI Hub</title>
+<meta name="Keywords" content="Lg Ai Hub">
+<meta name="Description" content="">
+<link rel="stylesheet" type="text/css" href="../oneclick/style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="/hub/asset/js/plugins.js"></script>
+<script type="text/javascript" src="/hub/asset/js/jquery.tag-editor.js"></script>
+<script type="text/javascript" src="/hub/asset/js/ui.common.js"></script>
+<script type="text/javascript" src="/hub/asset/js/aihub.common.js"></script>
+<script type="text/javascript" src="/hub/asset/js/chart/Chart.min.js"></script>
+<script type="text/javascript" src="/hub/asset/js/date.js"></script>
+<script type="text/javascript" src="/hub/asset/js/chart-utils.js"></script>
+<script type="text/javascript" src="/hub/asset/js/selectize.js"></script>
+<script type="text/javascript">
+    let userInfo = {"seq":57,"loginId":"jungin00.lee@lge.com","loginType":"","billingDeptCd":"LGE001","positionName":"\uCC45\uC784","deptName":"AI\uAE30\uBC18\uAE30\uC220\uD300","compName":"LG \uC804\uC790","compCd":"LGE","userName":"\uC774\uC815\uC778","gitUserName":"jungin00.lee","gitlabUserId":13,"authorityCd":"SAU"};
+</script> -->
+
+</head>
+<body>
+<!-- skip navigation -->
+<div class="skipNavi">
+    <a href="#content"><span>본문 바로가기</span></a>
+    <a href="#gnb"><span>주메뉴 바로가기</span></a>
+</div>
+<!-- //skip navigation -->
+<!-- wrap -->
+<div class="wrap">
+    <!-- header -->
+    <div id="header" class="header">
+    <h1 class="logo"><a href="/hub/mypage.do/mypage"></a></h1>
+    <div id="gnb" class="gnb">
+        <ul id="ulGnb">
+            <li id="headerMyPage"><a href="/hub/mypage.do/mypage" id="pageMyPage" data-toggle="tab">My page</a></li>
+            <li id="headerSearch"><a href="/hub/search/search_list.do" id="pageSearch" data-toggle="tab">All Project</a></li>
+            <li id="headerBest"><a href="/hub/bestpractice/best_practice_list.do" id="pageBest" data-toggle="tab">Best Practice</a></li>
+            <li id="headerAssets"><a href="/hub/assets_list.do" id="pageAssets" data-toggle="tab">Dashboard</a></li>
+            <li id="headerAdmin" style="display: none;"><a href="/hub/admin/admin_view.do" id="pageAdmin" data-toggle="tab">Admin</a></li>
+        </ul>
+        <a name="newButton" href="/hub/project/new-project.do" class="btnType01 btnCol02 on"><span>NEW PROJECT</span></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        if( !gfn_isEmpty(userInfo.authorityCd) && userInfo.authorityCd == "SAU" ) {
+            $("#headerAdmin").show();
+        }
+        fn_setMenu();
+    });
+    function fn_setMenu() {
+        let locationUrl = window.location.href;
+        $("#ulGnb li").find("a").each(function(index){
+
+            if(locationUrl.indexOf("mypage") > -1 || locationUrl.indexOf("/project/modify.do") > -1) {
+                $("#pageMyPage").addClass("on");
+            } else {
+                $("#pageMyPage").removeClass("on");
+            }
+            if(locationUrl.indexOf("/search/") > -1) {
+                $("#pageSearch").addClass("on");
+            } else {
+                $("#pageSearch").removeClass("on");
+            }
+
+            if(locationUrl.indexOf("/bestpractice/") > -1) {
+                $("#pageBest").addClass("on");
+            } else {
+                $("#pageBest").removeClass("on");
+            }
+
+            if(locationUrl.indexOf("/assets_list") > -1) {
+                $("#pageAssets").addClass("on");
+            } else {
+                $("#pageAssets").removeClass("on");
+            }
+
+            if(locationUrl.indexOf("admin") > -1) {
+                $("#pageAdmin").addClass("on");
+            } else {
+                $("#pageAdmin").removeClass("on");
+            }
+        });
+    }
+</script>
+
+    <!-- //header -->
+    <!-- container -->
+    <div id="container">
+        <!-- lnb -->
+        <div id="lnb" class="none">
+            <!--<th:block th:include="fragments/common/leftSearch"></th:block>-->
+        </div>
+        <!-- //lnb -->
+        <!-- content -->
+        <div id="content" class="newproject">
+            <div class="inCont">
+                <div class="titArea" style="margin-bottom: 0px;">
+                    <div class="leftArea">
+                        <h3 class="tit" style="font-size: 20px;">LG 전자 / AI기반기술팀 / 이정인 </h3>
+                    </div>
+                </div>
+                <div class="tblFormBox">
+                    <div class="profileImg"></div>
+                    <div style="width: 80%;">
+                        <div class="resultListBox">
+                            <a href="http://52.78.134.178:20080/gitlab/jungin00.lee2/bert-poc1-preprocessing" class="cont">
+                                <p class="tit" style="font-size: 24px;">BERT POC1 - Preprocessing</p>
+                                <p class="txt" style="font-size: 10px; margin-top: 0px;">http://52.78.134.178:20080/gitlab/jungin00.lee2/bert-poc1-preprocessing</p>
+                            </a>
+                            <div class="serchTxtArea">
+                                <a href="#" class="btnSerchTxt"><span>Others</span></a><a href="#" class="btnSerchTxt"><span>Deep learning</span></a><a href="#" class="btnSerchTxt"><span>Text</span></a><a href="#" class="btnSerchTxt"><span>Language understanding</span></a><a href="#" class="btnSerchTxt"><span>LG 전자</span></a>
+                            </div>
+                            <p class="tit" style="font-size: 14px;"></p>
+                            <p class="txt" id="developer">개발자: LG 전자 AI기반기술팀 이정인</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabArea">
+                    <div class="tabList">
+                        <ul class="tab">
+                            <li id="intro" class="on"><a href="#"><i></i>Intro<span class="blind">선택됨</span></a></li>
+                            <li id="demo"><a href="#"><i></i>Demo</a></li>
+                            <li id="api"><a href="#"><i></i>API</a></li>
+                        </ul>
+                    </div>
+                    <div id="intro-content" class="tabCont" style="display: block;">
+                        <iframe id="intro-frame" src="http://localhost:3000/readme/1" frameborder="0"></iframe>
+                    </div>
+                    <div id="demo-content" class="tabCont" style="display: none;">
+                      <iframe id="demo-frame" src="http://localhost:5000/" frameborder="0"></iframe>
+                    </div>
+                    <div id="api-content" class="tabCont" style="display: none;">
+                      <iframe id="api-frame" src="https://codepen.io/pen" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+</div>
+<!-- //wrap -->
+
+<script type="text/javascript">
+    // 팝업 오픈
+    $(function(){
+    });
+
+</script>
+<script>
+
+    const intro_content = document.getElementById('intro-content');
+    const api_content = document.getElementById('api-content');
+    const demo_content = document.getElementById('demo-content');
+
+    document.getElementById('intro').onclick = () => {
+        console.log('hhihihh')
+        intro.classList.add('on');
+        api.classList.remove('on');
+        demo.classList.remove('on');
+        
+        intro_content.style = 'display: block';
+        api_content.style = 'display: none';
+        demo_content.style = 'display: none';
+
+
+    };
+
+    document.getElementById('api').onclick = () => {
+        intro.classList.remove('on');
+        demo.classList.remove('on');
+        api.classList.add('on');
+
+        intro_content.style = 'display: none';
+        api_content.style = 'display: block';
+        demo_content.style = 'display: none';
+
+    }
+
+    document.getElementById('demo').onclick = () => {
+        intro.classList.remove('on');
+        demo.classList.add('on');
+        api.classList.remove('on');
+
+        intro_content.style = 'display: none';
+        api_content.style = 'display: none';
+        demo_content.style = 'display: block';
+
+    }
+
+  
+</script>
+<style>
+    .tabList {
+        margin-bottom: 0;
+    }
+    .inCont {
+        height: 85%;
+    }
+    .tabArea {
+        height: 85%;
+    }
+    .tabCont {
+        height: 100%;
+    }
+    .tblFormBox {
+        background: inherit;
+        height: 150px;
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .resultListBox {
+        background: inherit;
+        display: contents;
+    }
+
+    #developer {
+        font-size: 14px;
+        margin-top: 15px;
+        color: #525866;
+        text-align: end;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+</body>
+</html>

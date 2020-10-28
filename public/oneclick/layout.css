@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+html.noScroll, body.noScroll{/* overflow:hidden; */}
+
+/********************** layout **********************/
+.wrap {position:relative;width:100%;height:100vh;overflow:hidden;min-width:1280px}
+
+#header{position:relative;height: 64px;background:#292933;min-width:1280px;}
+#header.fix{position:fixed;left:0;top:0;width:100%;z-index:100;}
+#header h1.logo a{display:block;width:239px;height:64px;background:url("../images/common/logo.png") no-repeat left top;}
+
+.gnb{position:absolute;left:240px;right:0;top:0;text-align:center;width:auto;height:100%;}
+.gnb ul{padding-right:175px;display:table;table-layout:fixed;width:100%;font-size:0;height:100%;vertical-align:top;}
+.gnb ul li{display:inline-block;height:100%;padding-top:20px;}
+.gnb ul li + li{margin-left:64px;}
+.gnb ul li a{font-size:16px;font-family:"LGSmHaTSB";color:#b8becc;position:relative;padding-bottom:11px;}
+.gnb ul li a.on, .gnb ul li a:hover{color:#fff;}
+.gnb ul li a.on:after, .gnb ul li a:hover:after{position:absolute;bottom:0;left:0;display:block;content:"";width:100%;height:4px;background:#e63869;}
+.gnb .btnType01.btnCol02{position:absolute;right:16px;top:12px;display:block;width:158px;}
+
+html.noScroll #container {overflow:hidden;height:calc(100vh - 64px);width:100%;}
+#container{display:block;overflow:auto;height:calc(100vh - 64px)}
+
+#lnb {/*flex: 0 0 240px;overflow-y: hidden;overflow-x:hidden;*/width:240px;height:100%;background:#ffffff;border-right:1px solid #dadee6;position:relative;z-index:1;}
+#lnb.on{animation-duration: 0.5s;animation-name: lnbOn;}
+
+#lnb .serachBoxArea{position:relative;left:0;top:0;width:100%;height:56px;border-bottom:1px solid #ddd;}
+#lnb .serachBoxArea a{position:absolute;left:24px;top:20px;display:block;width:16px;height:16px;background:url("../images/common/btn_search.png") no-repeat left top;font-size:0;line-height:0;}
+#lnb .serachBoxArea input{height:100%;border:0;width:100%;padding:0 10px 0 48px;font-size:16px;color: #7a8599;font-weight:400;}
+#lnb .serachBoxArea input::-webkit-input-placeholder{color:#7a8599;font-size:16px;}
+#lnb .serachBoxArea input::-moz-placeholder{color:#7a8599;font-size:16px;}
+#lnb .serachBoxArea input:-ms-input-placeholder{color:#7a8599;font-size:16px;}
+#lnb .serachBoxArea input:-moz-placeholder{color:#7a8599;font-size:16px;}
+
+#lnb .linkArea{position:absolute;left:0;bottom:0;right:0;padding:24px;}
+#lnb .linkArea .linkBox a{display:block;text-align:center;font-size:14px;font-family:"LGSmHaTSB";background:#f5f7fa;padding:12px 0;border-radius:3px;color:#7a8599}
+#lnb .linkArea .linkBox a + a{margin-top:12px}
+#lnb .linkArea .noti{margin-top:16px;font-size:12px;letter-spacing:-0.8px;font-weight:700;}
+
+#lnb .linkArea .ci{display:block;text-indent:-9999em;width:176px;height:31px;background:url("../images/common/img_ci.png") no-repeat;margin:24px auto 0 auto}
+
+#lnb .searchArea{height:calc(100% - 290px);overflow-y:auto;overflow-x:hidden;padding:24px 24px 16px 24px;}
+#lnb .searchArea > .box.btn{margin-bottom:16px;}
+#lnb .searchArea > .box + .box{margin-top:8px;}
+#lnb .searchArea .selectBox{width:100%;}
+#lnb .searchArea .checkbox{display:block;text-align:right;margin-top:-10px;margin-bottom:15px}
+#lnb .searchArea .checkbox input[type=checkbox] + label{font-size:16px}
+
+#lnb .btnLnb{position:absolute;right:-17px;top:50%;margin-top:-33px;display:block;width:18px;height:66px;background:url("../images/common/btn_lnb.png") no-repeat left top;z-index:1;}
+#lnb .btnLnb span{font-size:0;line-height:0;text-indent:-9999em;}
+
+#lnb .btnType01{width:100%;}
+
+#lnb.on .btnLnb{background:url("../images/common/btn_lnb.png") no-repeat left top;}
+#lnb.off{left:-240px}
+#lnb.off.animation{animation-duration: 0.5s;animation-name: lnbOff}
+#lnb.off .btnLnb{display:block;width:51px;height:92px;background:url("../images/common/btn_lnb_open.png") no-repeat left top;right:-51px;margin-top:-48px}
+#lnb.off .btnLnb:hover{background-image:url("../images/common/btn_lnb_open_hover.png")}
+
+@keyframes lnbOff {
+	from {
+		left : 0
+	}
+
+	to {
+		left : -240px
+	}
+}
+
+@keyframes lnbOn {
+	from {
+		left : -240px
+	}
+
+	to {
+		left : 0
+	}
+}
+
+#content {position:absolute;top:64px;left:240px;right:0;bottom:0;overflow-y: auto;background:#f5f7fa;padding:0 32px 0 32px;}
+#lnb.off + #content{padding:0 0 0 0;left:0;}
+#lnb.off + #content .inCont{padding:0 32px 25px 32px;}
+#content .inCont{max-width:1136px;min-width:976px;margin:0 auto;padding-bottom:25px}
+#content.detail {padding:0;}
+#lnb.none + #content{left:0}
+
+/* 레이어 팝업 */
+body.closeWrap{overflow:hidden}
+.layerPop{display:none;position:absolute;left:0;right:0;top:0;bottom:0;width:100%;padding:80px 0;text-align:center;overflow:hidden;background:url(../images/common/popup-bg.png) repeat left top;z-index:99999;overflow-y:auto;box-sizing:border-box}
+.layerPop.noDim{background:none;}
+.layerPop:before{display:inline-block;content:'';vertical-align:middle;height:100%;margin-right:-2.5em}
+.layerPop .layerPopArea{position:relative;display:inline-block;vertical-align:middle;min-width:400px;margin:0 auto;text-align:left;}
+.layerPop.inner .layerPopArea{left:50%}
+
+.popHeader{padding:22px 32px 0 32px;height:64px;background:#7a8599;border-radius:12px 12px 0 0;}
+.popHeader .tit{color: #fff;font-size:20px;font-family:'LGSmHaTSB';}
+
+.layerPop .layerPopArea .popContent{background:#fff;padding:32px;border-radius:0 0 12px 12px;}
+.layerPop .layerPopArea .btnBottom{padding:20px 0;background:#f2f4f7}
+.layerPop .layerPopArea .btnBottom .btnLayerClose{position:static;margin:0 auto;background-image:none;text-indent:0;height:30px}
+.layerPop .layerPopArea .btnLayerClose{display:block;position:absolute;top:0;right:0;text-indent:-9999px;width:64px;height:64px;background:url(../images/common/btn_layer_close.png) no-repeat center center;}
+
+.layerPop.reference .layerPopArea{max-width:800px;}
+.layerPop.reference .tblList02{width:100%;}
+
+.layerPop.secureCheck .layerPopArea{max-width:800px;}
+.layerPop.secureCheck .tblList02{width:100%;}
+
+.layerPop.history .layerPopArea{width:800px}
+.layerPop.bpDetail .layerPopArea{width:800px}
+.layerPop.layerStatistics .layerPopArea{width:600px}
+
+.layerPop.bpInsert .layerPopArea{width:976px;}
+.layerPop.bpInsert .popContent{padding:0;}
+
+.layerPop.select .layerPopArea{width:750px;}

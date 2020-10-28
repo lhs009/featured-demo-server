@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hub 포털</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron mt-2">
+      <h5>LG 사이언스파크 > 이진상 선임</h5>
+      <div class="card mt-1">
+        <div class="row no-gutters">
+          <div class="col-md-2">
+            <img src="https://loremflickr.com/320/240/man" class="card-img m-3" alt="...">
+          </div>
+        
+          <div class="col-md-10">
+            <div class="card-body ml-5">
+              <h5 class="card-title">Visual Inspection Task</h5>
+              <p class="card-text">https://lgaihub.lgsp.co.kr/mypage/mypage_view.do/220/mypage02</p>
+              <button type="button" class="btn btn-primary rounded-pill">Technical Guide</button>
+              <button type="button" class="btn btn-primary rounded-pill">Deep Learning</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-intro-tab" data-toggle="tab" href="#nav-intro" role="tab" aria-controls="nav-intro" aria-selected="true">Intro</a>
+        <a class="nav-item nav-link" id="nav-interview-tab" data-toggle="tab" href="#nav-interview" role="tab" aria-controls="nav-interview" aria-selected="false">Interview</a>
+        <a class="nav-item nav-link" id="nav-api-tab" data-toggle="tab" href="#nav-api" role="tab" aria-controls="nav-api" aria-selected="false">API</a>
+        <a class="nav-item nav-link" id="nav-demo-tab" data-toggle="tab" role="tab" aria-controls="nav-demo" aria-selected="false">DEMO</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="jumbotron mt-2 tab-pane fade show active" id="nav-intro" role="tabpanel" aria-labelledby="nav-intro-tab">
+          INTRO XXXX ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eos deserunt eius excepturi quam fugit nihil sed? Odio eaque consequatur alias sint omnis odit, reiciendis in, explicabo cum vitae commodi.
+      </div>
+      <div class="jumbotron mt-2 tab-pane fade" id="nav-interview" role="tabpanel" aria-labelledby="nav-interview-tab">
+        INTERVIEW XXXX dsfasdfa;fdsjflkasd;fjasdklfjadsklfj
+      </div>
+      <div class="jumbotron mt-2 tab-pane fade" id="nav-api" role="tabpanel" aria-labelledby="nav-api-tab">
+        API KKKKKKKKKKKKKKK
+      </div>
+      <div class="tab-pane fade" id="nav-demo" role="tabpanel" aria-labelledby="nav-demo-tab">
+        <!-- <div id="demo" class="embed-responsive embed-responsive-21by9">
+          <iframe class="embed-responsive-item" src="http://localhost:8080/"></iframe>
+        </div> -->   
+      </div>
+    </div>
+  </div>
+  <script>
+    const demo = document.getElementById('nav-demo-tab');
+    console.log(demo);
+    demo.addEventListener('click', () => {
+      window.open("http://localhost:8080");
+    });
+  </script>
+</body>
+</html>
