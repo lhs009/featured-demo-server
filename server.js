@@ -25,6 +25,6 @@ app.get('/readme/:no', (req, res) => {
 	res.send(converter.makeHtml(data));
 });
 
-app.listen(80, () => {
+app.listen(3000, () => {
 	console.log('server is running.....');
 });
